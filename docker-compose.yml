@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  php-apache-environment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: viriya-com-apache2-ssl-php7.2-sqlsrv5.7
+    image: viriya-com-webapp-php72
+    volumes:
+      - ./src:/var/www/html/
+    ports:
+      - 80:80
+      - 443:443
